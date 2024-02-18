@@ -5,6 +5,7 @@ import {queryMiddleware} from "../middlewares/query.middleware";
 
 const router = Router();
 
+
 router.get("/",
     queryMiddleware.isValid,
     weatherController.getData);

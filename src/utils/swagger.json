@@ -1,0 +1,94 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Express API for Open Weather Map",
+    "version": "1.0",
+    "description": "This is a REST API application made with Express. It retrieves data from OpenWeatherMap.",
+    "contact": {
+      "name": "OpenWeatherMapAPI",
+      "url": "https://openweathermap.org/api"
+    }
+  },
+  "paths": {
+    "/weather": {
+      "get": {
+        "tags": [
+          "Displays the current weather in the selected city or geographic coordinates"
+        ],
+        "summary": "Retrieves the current weather data from the OpenWeatherMapAPI for the selected city or geographic coordinates",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lon",
+            "in": "query",
+            "description": "longitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "latitude",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Weather Data",
+            "schema": {
+              "$ref": "#/definitions/WeatherData"
+            }
+          },
+          "400": {
+            "description": "Bad Params"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "WeatherData": {
+      "properties": {
+        "data":  {
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "City name"
+            },
+            "temp": {
+              "type": "number",
+              "description": "Current temperature in degrees Celsius"
+            },
+            "feels_like": {
+              "type": "number",
+              "description": "Current sensation temperature in degrees Celsius"
+            },
+            "pressure": {
+              "type": "number",
+              "description": "Current atmospheric pressure in mm. mercury"
+            },
+            "wind_speed": {
+              "type": "number",
+              "description": "Current wind speed in m per second"
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
