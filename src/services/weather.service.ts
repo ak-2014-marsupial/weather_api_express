@@ -1,7 +1,7 @@
 import {AxiosResponse} from "axios";
 
 import {axiosService} from "./axios.service";
-import {breakPoint} from "../constants/urls"
+import {breakPoint} from "../constants/urls.constants"
 import {configs} from "../configs/config";
 import {IWeatherData} from "../interfaces/oneWeatherMap.interface";
 import {IQueryParams} from "../interfaces/app.interface";

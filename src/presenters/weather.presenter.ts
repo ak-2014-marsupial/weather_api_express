@@ -8,6 +8,9 @@ export class WeatherPresenter {
             feels_like: data.main.feels_like,
             pressure: data.main.pressure,
             wind_speed: data.wind.speed,
+            lat:data.coord.lat,
+            lon:data.coord.lon,
+            country:data.sys.country
         }
     }
 }

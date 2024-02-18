@@ -83,6 +83,18 @@
             "wind_speed": {
               "type": "number",
               "description": "Current wind speed in m per second"
+            },
+            "lat": {
+              "type": "number",
+              "description": "The Latitude"
+            },
+            "lon": {
+              "type": "number",
+              "description": "The Longitude"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country"
             }
           }
         }
